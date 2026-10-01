@@ -23,6 +23,7 @@ function c = load_kpg(datadir)
     c.f = br(:,1); c.t = br(:,2); c.r = br(:,3); c.x = br(:,4); c.b = br(:,5);
     c.rate = br(:,6) / c.baseMVA;      % [pu]
     c.br_kv = max(c.kv(c.f), c.kv(c.t));
+    c.ncir = branch_circuits(fullfile(datadir, 'KPG193_test.m'), size(br,1));   % 행 끝 주석의 회선 수
 
     % 위치 / 이름
     fid = fopen(fullfile(datadir, 'bus_location.csv'), 'r', 'n', 'UTF-8');
@@ -43,6 +44,22 @@ function c = load_kpg(datadir)
             if ~isempty(p), c.area_name{a} = s(1:p(1)-1); break; end
         end
     end
+end
+
+function n = branch_circuits(fname, nl)
+% 선로 행 끝 주석(% 전압 line 회선수)에서 등가 선로에 묶인 회선 수 추출
+    txt = fileread(fname);
+    s = strfind(txt, 'mpc.branch = [');
+    e = strfind(txt(s:end), '];');
+    lines = strsplit(txt(s:s+e(1)), sprintf('\n'));
+    n = [];
+    for k = 2:numel(lines)
+        L = strtrim(lines{k});
+        if isempty(L) || L(1) == '%' || L(1) == ']', continue; end
+        tk = regexp(L, '(\d+)\s*$', 'tokens');
+        n(end+1,1) = str2double(tk{1}{1}); %#ok<AGROW>
+    end
+    if numel(n) ~= nl, error('선로 회선 수 정보 개수 불일치'); end
 end
 
 function fuel = gen_fuel(fname, ng)

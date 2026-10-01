@@ -28,7 +28,10 @@ function c = dispatch_kpg(c, load_scale, loss_rate)
     end
     % 4) 최소출력 합이 수요보다 크면 LNG → 석탄 순으로 정지 (작은 것부터)
     while sum(c.Pmin(c.gon)) > D
-        cand = find(c.gon & rank >= 2);
+        mr = false(size(c.gon));
+        if isfield(c, 'mustrun'), mr = c.mustrun; end
+        cand = find(c.gon & rank >= 2 & ~mr);
+        if isempty(cand), break; end           % 더 정지할 발전기가 없음 (출력제어는 호출 측에서 처리)
         [~, ix] = sort(rank(cand) * 1e6 - c.Pmax(cand), 'descend');
         c.gon(cand(ix(1))) = false;
     end
