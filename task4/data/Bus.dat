@@ -1,0 +1,17 @@
+% 9 Bus Power Flow Data (Korea)
+% Bus Type
+%					1: Slack
+%					2: Generator
+%					3: Load
+%					Sbase : 30000MVA (30GVA)
+%					Vbase : 345kV
+% Num	 Type    PG	QG	PL	QL	VM	VAngle
+1	1	0	0	0	0	1.01	0
+2	2	0.3	0	0	0	1	0
+3	3	0	0	2	0.20	1	0
+4	3	0	0	0.20	0.10	1	0
+5	3	0	0	0.22	0.10	1	0
+6	3	0	0	-2	-0.20	1	0
+7	3	0	0	0.10	0.050	1	0
+8	3	0	0	1	0.5	1	0
+9	3	0	0	-1	-0.10	1	0

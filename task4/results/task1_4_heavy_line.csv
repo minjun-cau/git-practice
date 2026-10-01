@@ -1,0 +1,408 @@
+line,from,to,from_name,to_name,kV,P_MW,Q_MVar,S_MVA,rate_MVA,loading_pct,Ploss_MW
+1,1,3,Gangneung Branch,Donghae Branch,345,503.77,-14.14,503.97,904,55.75,6.042
+2,1,3,Gangneung Branch,Donghae Branch,345,2571.10,-30.31,2571.27,2172,118.38,26.264
+3,1,7,Gangneung Branch,Yangyang Branch,345,-1458.41,168.38,1473.02,2172,67.82,10.865
+4,1,7,Gangneung Branch,Yangyang Branch,345,-285.15,37.63,288.76,904,31.94,2.499
+5,1,14,Gangneung Branch,Pyeongchang Branch,345,593.27,16.00,593.48,1356,43.77,10.936
+6,2,15,Gangwon Headquarters Directly Managed,Hongcheon Branch,154,-76.23,86.00,117.99,904,13.05,0.245
+7,2,16,Gangwon Headquarters Directly Managed,Hwacheon Branch,154,-138.00,41.04,145.16,904,16.06,0.386
+8,2,35,Gangwon Headquarters Directly Managed,Gapyeong Branch,154,242.69,-30.35,244.58,904,27.06,0.944
+9,3,4,Donghae Branch,Samcheok Branch,345,277.86,-64.01,285.14,2172,13.13,0.116
+10,3,4,Donghae Branch,Samcheok Branch,345,54.27,-13.43,55.90,904,6.18,0.027
+11,3,8,Donghae Branch,Yeongwol Branch,345,167.30,-39.32,171.86,1356,12.67,0.949
+12,3,11,Donghae Branch,Jeongseon Branch,345,149.85,-19.12,151.07,904,16.71,0.717
+13,3,13,Donghae Branch,Taebaek Branch,765,192.17,-58.50,200.88,1356,14.81,0.807
+14,3,190,Donghae Branch,Jecheon Branch,345,1918.84,-183.53,1927.59,4344,44.37,20.274
+15,4,72,Samcheok Branch,Uljin Branch,765,78.68,-88.79,118.63,2172,5.46,0.059
+16,5,7,Sokcho-Goseong Branch,Yangyang Branch,345,111.21,-13.51,112.03,904,12.39,0.141
+17,5,10,Sokcho-Goseong Branch,Inje Branch,154,525.19,23.86,525.74,904,58.16,8.095
+18,6,10,Yanggu Branch,Inje Branch,154,-489.66,78.18,495.87,904,54.85,2.997
+19,6,16,Yanggu Branch,Hwacheon Branch,154,507.99,-81.71,517.13,904,57.20,4.763
+20,7,10,Yangyang Branch,Inje Branch,345,494.08,23.52,494.64,904,54.72,6.999
+21,8,11,Yeongwol Branch,Jeongseon Branch,154,-37.86,20.71,46.68,904,5.16,0.040
+22,8,13,Yeongwol Branch,Taebaek Branch,765,-123.33,-19.55,124.87,2260,5.53,0.199
+23,8,184,Yeongwol Branch,Danyang Branch,154,528.60,48.53,530.82,904,58.72,4.623
+24,8,190,Yeongwol Branch,Jecheon Branch,345,387.37,-9.66,387.49,904,42.86,2.644
+25,9,17,Wonju Branch,Hoengseong Branch,154,-371.27,42.03,374.09,904,41.38,1.405
+26,9,29,Wonju Branch,Yeoju Branch,154,92.40,-60.81,110.61,904,12.24,0.251
+27,9,190,Wonju Branch,Jecheon Branch,345,-208.20,-32.27,212.14,904,23.47,1.159
+28,10,15,Inje Branch,Hongcheon Branch,154,446.39,-22.14,446.94,904,49.44,7.285
+29,12,16,Cheorwon Branch,Hwacheon Branch,154,-176.84,31.33,180.64,904,19.98,0.842
+30,12,42,Cheorwon Branch,Yeoncheon Branch,154,79.90,-26.18,84.08,1356,6.20,0.083
+31,12,44,Cheorwon Branch,Pocheon Branch,154,27.82,-14.97,31.60,904,3.50,0.020
+32,13,41,Taebaek Branch,Yangpyeong Branch,765,3139.18,-337.57,3157.28,14580,21.65,11.087
+33,13,72,Taebaek Branch,Uljin Branch,765,-96.42,15.59,99.45,904,11.00,0.285
+34,13,72,Taebaek Branch,Uljin Branch,765,-2461.89,201.98,2494.94,14580,17.11,2.050
+35,13,72,Taebaek Branch,Uljin Branch,765,-493.68,71.58,507.07,2172,23.35,1.240
+36,14,17,Pyeongchang Branch,Hoengseong Branch,154,255.02,-7.07,255.12,904,28.22,1.898
+37,14,190,Pyeongchang Branch,Jecheon Branch,345,254.59,-65.05,262.99,904,29.09,1.574
+38,15,17,Hongcheon Branch,Hoengseong Branch,154,235.32,-1.18,235.32,904,26.03,0.972
+39,16,35,Hwacheon Branch,Gapyeong Branch,154,250.32,-47.20,254.73,904,28.18,1.657
+40,18,22,Gyeonggi Headquarters Directly Managed,West Suwon Branch,345,-551.98,-21.12,554.14,904,61.30,1.275
+41,18,23,Gyeonggi Headquarters Directly Managed,West Yongin Branch,154,550.70,59.20,554.34,2172,25.52,0.291
+42,18,25,Gyeonggi Headquarters Directly Managed,Seongnam Branch,154,29.07,-11.89,31.41,904,3.47,0.014
+43,18,25,Gyeonggi Headquarters Directly Managed,Seongnam Branch,154,149.09,-58.21,160.05,2172,7.37,0.060
+44,18,28,Gyeonggi Headquarters Directly Managed,Anyang Branch,154,-1095.97,-60.16,1099.87,2172,50.64,2.023
+45,19,22,Gwangmyeong Branch,West Suwon Branch,345,-1121.45,70.95,1129.38,4344,26.00,1.981
+46,19,26,Gwangmyeong Branch,Ansan Branch,345,-3089.06,355.64,3112.25,3258,95.53,13.746
+47,19,104,Gwangmyeong Branch,Guro-Geumcheon Branch,345,2686.10,-396.07,2715.15,2124,127.83,2.060
+48,19,104,Gwangmyeong Branch,Guro-Geumcheon Branch,345,109.68,54.67,123.12,1808,6.81,0.016
+49,19,105,Gwangmyeong Branch,Southern Seoul Headquarters Directly Managed,345,1201.27,-349.89,1251.19,2859,43.76,0.189
+50,19,164,Gwangmyeong Branch,Bucheon Branch,345,-5.90,6.17,10.03,904,1.11,0.000
+51,19,164,Gwangmyeong Branch,Bucheon Branch,345,-22.87,234.15,310.26,1416,21.91,0.085
+52,20,21,Gwangju Branch,East Yongin Branch,154,40.85,2.65,41.46,904,4.59,0.024
+53,20,23,Gwangju Branch,West Yongin Branch,154,31.48,-19.20,36.87,1356,2.72,0.012
+54,20,25,Gwangju Branch,Seongnam Branch,154,15.63,-41.51,44.36,904,4.91,0.016
+55,20,29,Gwangju Branch,Yeoju Branch,154,-760.02,145.80,792.79,4344,18.25,1.333
+56,20,31,Gwangju Branch,Icheon Branch,154,399.99,82.15,408.34,904,45.17,2.617
+57,20,41,Gwangju Branch,Yangpyeong Branch,765,-344.08,-5.35,346.36,904,38.31,1.865
+58,20,101,Gwangju Branch,Gangdong-Songpa Branch,154,11.69,-36.11,37.96,1356,2.80,0.010
+59,20,101,Gwangju Branch,Gangdong-Songpa Branch,154,62.36,-183.26,193.58,3258,5.94,0.044
+60,21,23,East Yongin Branch,West Yongin Branch,154,-214.07,-194.09,288.96,2172,13.30,0.085
+61,21,23,East Yongin Branch,West Yongin Branch,154,-42.55,-37.35,56.62,904,6.26,0.019
+62,21,27,East Yongin Branch,Anseong Branch,765,-941.51,-14.96,944.37,2172,43.48,2.778
+63,21,27,East Yongin Branch,Anseong Branch,765,-184.48,0.06,185.12,904,20.48,0.639
+64,21,30,East Yongin Branch,Osan Branch,154,-560.98,16.52,564.86,904,62.48,3.720
+65,21,31,East Yongin Branch,Icheon Branch,154,352.45,73.26,359.99,904,39.82,2.099
+66,22,26,West Suwon Branch,Ansan Branch,345,-2294.21,261.41,2311.14,3258,70.94,6.144
+67,22,26,West Suwon Branch,Ansan Branch,345,-448.67,58.52,452.96,1356,33.40,1.413
+68,22,28,West Suwon Branch,Anyang Branch,345,1058.20,-301.84,1100.41,1906,57.73,0.564
+69,22,28,West Suwon Branch,Anyang Branch,345,14.03,0.40,14.56,904,1.61,0.002
+70,22,30,West Suwon Branch,Osan Branch,345,-289.03,37.49,291.84,904,32.28,1.007
+71,23,25,West Yongin Branch,Seongnam Branch,154,-89.74,-122.56,151.90,3258,4.66,0.031
+72,23,101,West Yongin Branch,Gangdong-Songpa Branch,154,-104.30,-94.86,140.99,4344,3.25,0.025
+73,24,30,West Pyeongtaek Branch,Osan Branch,154,485.34,-40.70,487.04,904,53.88,3.245
+74,24,32,West Pyeongtaek Branch,Pyeongtaek Branch,154,1075.94,135.84,1084.49,904,119.97,14.673
+75,24,34,West Pyeongtaek Branch,Hwaseong Branch,154,2207.80,81.58,2209.31,2172,101.72,14.373
+76,24,34,West Pyeongtaek Branch,Hwaseong Branch,154,432.92,8.95,433.01,904,47.90,3.306
+77,24,125,West Pyeongtaek Branch,Dangjin Branch,765,-360.62,48.65,364.67,904,40.34,2.739
+78,24,125,West Pyeongtaek Branch,Dangjin Branch,765,-1844.27,218.34,1860.53,2172,85.66,11.905
+79,24,134,West Pyeongtaek Branch,Asan Branch,345,1112.29,160.03,1123.74,2172,51.74,4.113
+80,25,100,Seongnam Branch,Gangnam Branch,154,-19.03,19.82,30.19,1356,2.23,0.004
+81,25,101,Seongnam Branch,Gangdong-Songpa Branch,154,28.55,188.33,232.41,708,32.83,0.117
+82,25,103,Seongnam Branch,Gwanak-Dongjak Branch,154,-34.48,14.37,40.45,1808,2.24,0.007
+83,26,34,Ansan Branch,Hwaseong Branch,345,539.79,547.34,781.70,3258,23.99,0.662
+84,26,162,Ansan Branch,Southern Incheon Branch,345,-2322.82,242.73,2338.70,3258,71.78,8.005
+85,26,166,Ansan Branch,Siheung Branch,345,202.73,15.48,203.32,904,22.49,0.423
+86,27,32,Anseong Branch,Pyeongtaek Branch,765,373.12,163.83,407.50,904,45.08,1.703
+87,27,41,Anseong Branch,Yangpyeong Branch,765,-1537.86,-433.49,1597.79,14580,10.96,1.129
+88,27,192,Anseong Branch,Jincheon Branch,765,-534.80,144.31,605.80,14580,4.16,0.062
+89,27,192,Anseong Branch,Jincheon Branch,765,-105.43,35.82,123.54,2172,5.69,0.038
+90,27,192,Anseong Branch,Jincheon Branch,765,-20.50,7.35,24.25,904,2.68,0.009
+91,29,31,Yeoju Branch,Icheon Branch,154,671.36,76.68,675.72,904,74.75,5.577
+92,29,41,Yeoju Branch,Yangpyeong Branch,765,-184.29,-36.16,188.39,904,20.84,0.663
+93,29,189,Yeoju Branch,Eumseong Branch,154,117.88,8.84,118.40,904,13.10,0.410
+94,29,190,Yeoju Branch,Jecheon Branch,345,-1919.86,62.64,1933.13,4344,44.50,12.091
+95,29,194,Yeoju Branch,Chungju Branch,154,361.54,23.87,374.21,3258,11.49,0.467
+96,30,32,Osan Branch,Pyeongtaek Branch,154,586.96,153.52,606.70,904,67.11,4.333
+97,31,194,Icheon Branch,Chungju Branch,154,-339.39,-23.91,342.26,1808,18.93,2.328
+98,32,134,Pyeongtaek Branch,Asan Branch,345,-774.49,-2.45,784.12,1356,57.83,7.315
+99,32,136,Pyeongtaek Branch,Cheonan Branch,154,-25.34,-3.45,25.57,904,2.83,0.009
+100,33,35,Hanam Branch,Gapyeong Branch,154,-297.60,28.96,300.72,1356,22.18,1.792
+101,33,39,Hanam Branch,Namyangju Branch,345,2.69,-3.76,4.63,904,0.51,0.000
+102,33,39,Hanam Branch,Namyangju Branch,345,132.72,-341.27,366.17,1906,19.21,0.024
+103,33,101,Hanam Branch,Gangdong-Songpa Branch,154,116.76,38.32,123.19,904,13.63,0.090
+104,33,101,Hanam Branch,Gangdong-Songpa Branch,154,592.47,205.18,628.69,2172,28.95,0.393
+105,34,134,Hwaseong Branch,Asan Branch,345,-926.45,94.51,948.94,4344,21.84,2.751
+106,35,39,Gapyeong Branch,Namyangju Branch,345,417.84,-39.37,419.69,1808,23.21,2.509
+107,35,41,Gapyeong Branch,Yangpyeong Branch,765,212.45,-63.61,221.76,2172,10.21,0.216
+108,35,44,Gapyeong Branch,Pocheon Branch,154,-292.61,31.75,299.96,2172,13.81,0.301
+109,36,39,Northern Gyeonggi Headquarters Directly Managed,Namyangju Branch,345,271.68,-50.29,276.30,3258,8.48,0.106
+110,36,40,Northern Gyeonggi Headquarters Directly Managed,Dongducheon Branch,345,-481.27,64.09,485.98,904,53.76,2.903
+111,36,44,Northern Gyeonggi Headquarters Directly Managed,Pocheon Branch,345,-467.79,63.54,472.63,904,52.28,3.177
+112,36,155,Northern Gyeonggi Headquarters Directly Managed,Nowon-Dobong Branch,345,103.63,6.18,103.86,904,11.49,0.074
+113,36,158,Northern Gyeonggi Headquarters Directly Managed,Seodaemun-Eunpyeong Branch,345,219.46,-31.17,221.66,2172,10.21,0.114
+114,36,158,Northern Gyeonggi Headquarters Directly Managed,Seodaemun-Eunpyeong Branch,345,85.88,-13.62,86.96,1808,4.81,0.053
+115,37,43,Goyang Branch,Paju Branch,345,-1402.15,1157.06,1881.41,1416,132.87,5.078
+116,37,102,Goyang Branch,Gangseo-Yangcheon Branch,154,1236.34,-753.15,1447.68,1062,136.32,6.049
+117,37,158,Goyang Branch,Seodaemun-Eunpyeong Branch,154,106.29,-12.84,107.06,904,11.84,0.111
+118,38,39,Guri Branch,Namyangju Branch,345,-1768.84,371.27,1824.95,3186,57.28,0.750
+119,38,155,Guri Branch,Nowon-Dobong Branch,154,1607.69,-387.42,1653.71,2478,66.74,2.109
+120,39,41,Namyangju Branch,Yangpyeong Branch,765,-1720.69,106.14,1729.97,3258,53.10,7.100
+121,39,156,Namyangju Branch,Dongdaemun-Jungnang Branch,345,81.11,34.56,89.30,1356,6.59,0.032
+122,40,42,Dongducheon Branch,Yeoncheon Branch,154,-38.04,4.61,38.88,904,4.30,0.015
+123,40,43,Dongducheon Branch,Paju Branch,345,1699.18,-148.99,1705.69,3258,52.35,7.386
+124,40,44,Dongducheon Branch,Pocheon Branch,154,-435.48,34.47,438.28,2172,20.18,0.279
+125,40,44,Dongducheon Branch,Pocheon Branch,154,-85.20,8.14,85.91,904,9.50,0.064
+126,41,44,Yangpyeong Branch,Pocheon Branch,765,-642.57,55.40,666.47,4344,15.34,1.317
+127,42,44,Yeoncheon Branch,Pocheon Branch,154,-28.19,-0.74,28.42,904,3.14,0.010
+128,42,44,Yeoncheon Branch,Pocheon Branch,154,-143.93,-6.11,144.85,2172,6.67,0.044
+129,42,160,Yeoncheon Branch,Ganghwa Branch,154,124.34,-14.62,125.20,904,13.85,0.658
+130,43,158,Paju Branch,Seodaemun-Eunpyeong Branch,345,765.44,-84.24,770.06,3258,23.64,0.979
+131,43,158,Paju Branch,Seodaemun-Eunpyeong Branch,345,149.78,-18.95,150.97,1356,11.13,0.225
+132,43,160,Paju Branch,Ganghwa Branch,345,-10.55,8.09,17.37,904,1.92,0.004
+133,43,161,Paju Branch,Gimpo Branch,345,-94.17,81.47,134.93,2172,6.21,0.025
+134,45,48,Geoje Branch,Goseong Branch,154,-194.49,-23.94,195.96,1356,14.45,0.532
+135,45,58,Geoje Branch,Tongyeong Branch,154,-185.54,-14.79,186.58,904,20.64,0.472
+136,46,61,Geochang Branch,Hamyang Branch,154,-68.99,-2.76,69.13,904,7.65,0.087
+137,46,62,Geochang Branch,Hapcheon Branch,154,19.07,-6.64,20.19,904,2.23,0.007
+138,47,50,Gyeongnam Headquarters Directly Managed,Masan Branch,154,-905.19,33.90,907.31,2172,41.77,1.386
+139,47,50,Gyeongnam Headquarters Directly Managed,Masan Branch,154,-177.23,9.52,177.84,904,19.67,0.319
+140,47,51,Gyeongnam Headquarters Directly Managed,Miryang Branch,154,23.12,-16.58,28.45,904,3.15,0.014
+141,47,56,Gyeongnam Headquarters Directly Managed,Jinhae Branch,345,-861.25,8.84,862.04,2172,39.69,0.717
+142,47,56,Gyeongnam Headquarters Directly Managed,Jinhae Branch,345,-168.71,4.47,168.95,904,18.69,0.165
+143,47,141,Gyeongnam Headquarters Directly Managed,Gimhae Branch,154,126.43,6.83,126.61,904,14.01,0.213
+144,47,141,Gyeongnam Headquarters Directly Managed,Gimhae Branch,154,644.31,45.35,646.02,2172,29.74,0.925
+145,47,146,Gyeongnam Headquarters Directly Managed,Northern Busan Branch,345,-421.95,-237.67,484.28,4344,11.15,0.376
+146,47,147,Gyeongnam Headquarters Directly Managed,Western Busan Branch,154,805.07,50.07,808.05,3258,24.80,1.345
+147,48,50,Goseong Branch,Masan Branch,154,-38.61,-29.39,48.53,1356,3.58,0.034
+148,48,52,Goseong Branch,Sacheon Branch,345,-309.92,-12.87,312.29,904,34.54,1.605
+149,48,58,Goseong Branch,Tongyeong Branch,154,18.66,8.32,21.91,904,2.42,0.004
+150,49,55,Namhae Branch,Jinju Branch,154,2203.49,-80.59,2204.96,3258,67.68,16.380
+151,49,59,Namhae Branch,Hadong Branch,154,178.62,-13.97,179.16,904,19.82,0.630
+152,49,79,Namhae Branch,Gwangyang Branch,345,1479.68,-138.11,1486.11,3258,45.61,3.712
+153,50,52,Masan Branch,Sacheon Branch,345,-1485.70,-43.81,1492.77,5430,27.49,5.706
+154,50,54,Masan Branch,Uiryeong Branch,345,-560.07,-32.79,561.03,3258,17.22,0.690
+155,50,57,Masan Branch,Changnyeong Branch,765,110.16,-25.56,113.09,904,12.51,0.310
+156,50,60,Masan Branch,Haman Branch,154,82.19,57.37,101.53,904,11.23,0.099
+157,51,57,Miryang Branch,Changnyeong Branch,765,24.88,-13.85,28.47,904,3.15,0.013
+158,51,119,Miryang Branch,Cheongdo Branch,154,164.27,-7.76,164.46,904,18.19,0.363
+159,51,149,Miryang Branch,Yangsan Branch,154,-50.13,-10.45,51.21,904,5.66,0.054
+160,52,55,Sacheon Branch,Jinju Branch,345,-44.11,16.70,49.89,904,5.52,0.047
+161,52,56,Sacheon Branch,Jinhae Branch,345,1594.74,-81.04,1596.80,5430,29.41,7.209
+162,52,58,Sacheon Branch,Tongyeong Branch,345,353.45,28.10,354.56,1356,26.15,1.888
+163,53,55,Sancheong Branch,Jinju Branch,154,329.65,-6.21,334.00,3258,10.25,0.301
+164,54,55,Uiryeong Branch,Jinju Branch,345,-276.02,38.34,279.10,904,30.87,1.109
+165,54,55,Uiryeong Branch,Jinju Branch,345,-1411.66,172.72,1423.98,2172,65.56,4.820
+166,54,61,Uiryeong Branch,Hamyang Branch,345,111.09,-21.06,113.07,1808,6.25,0.239
+167,54,111,Uiryeong Branch,Southern Daegu Branch,345,1859.57,-94.48,1861.97,5430,34.29,9.677
+168,54,173,Uiryeong Branch,Namwon Branch,345,-884.44,-91.92,891.01,4344,20.51,3.772
+169,55,59,Jinju Branch,Hadong Branch,154,-195.59,14.72,197.15,904,21.81,1.026
+170,55,60,Jinju Branch,Haman Branch,154,467.72,13.18,467.91,1356,34.51,2.888
+171,56,141,Jinhae Branch,Gimhae Branch,345,166.27,4.34,166.33,904,18.40,0.441
+172,57,109,Changnyeong Branch,Goryeong Branch,765,136.93,60.01,179.35,3258,5.50,0.064
+173,57,111,Changnyeong Branch,Southern Daegu Branch,765,91.29,9.97,92.44,904,10.23,0.182
+174,57,111,Changnyeong Branch,Southern Daegu Branch,765,696.93,87.67,707.96,3258,21.73,1.190
+175,57,149,Changnyeong Branch,Yangsan Branch,765,-973.02,-205.98,994.59,14580,6.82,0.416
+176,59,79,Hadong Branch,Gwangyang Branch,345,-55.76,-6.93,56.19,904,6.22,0.033
+177,62,109,Hapcheon Branch,Goryeong Branch,154,56.98,-7.69,57.50,904,6.36,0.046
+178,63,70,Gyeongbuk Headquarters Directly Managed,Yeongju Branch,345,51.97,-0.88,52.31,904,5.79,0.062
+179,63,71,Gyeongbuk Headquarters Directly Managed,Yecheon Branch,154,-1.15,-3.44,3.63,904,0.40,0.000
+180,63,71,Gyeongbuk Headquarters Directly Managed,Yecheon Branch,154,-5.88,-17.61,18.57,2172,0.85,0.000
+181,63,74,Gyeongbuk Headquarters Directly Managed,Cheongsong Branch,345,-127.90,-1.97,128.30,904,14.19,0.372
+182,64,65,Gumi Branch,Gunwi Branch,154,-12.97,-8.95,15.76,904,1.74,0.004
+183,64,68,Gumi Branch,Sangju Branch,154,-347.80,47.04,352.14,904,38.95,3.479
+184,64,110,Gumi Branch,Gimcheon Branch,154,267.18,32.70,269.17,904,29.78,1.115
+185,64,112,Gumi Branch,Daegu Headquarters Directly Managed,154,-248.91,-35.37,251.41,1808,13.91,0.770
+186,64,120,Gumi Branch,Chilgok Branch,345,-173.57,-23.51,175.43,904,19.41,0.352
+187,64,120,Gumi Branch,Chilgok Branch,345,-1325.68,-201.47,1342.51,3258,41.21,2.295
+188,65,73,Gunwi Branch,Uiseong Branch,154,-37.48,-9.76,38.73,904,4.28,0.017
+189,66,68,Mungyeong Branch,Sangju Branch,154,363.20,-28.99,364.36,904,40.30,1.862
+190,66,70,Mungyeong Branch,Yeongju Branch,345,-303.17,-5.75,305.38,1356,22.52,2.113
+191,66,184,Mungyeong Branch,Danyang Branch,154,-165.92,22.80,168.81,904,18.67,0.984
+192,67,70,Bonghwa Branch,Yeongju Branch,345,353.94,-35.53,355.72,904,39.35,1.161
+193,67,70,Bonghwa Branch,Yeongju Branch,345,1808.65,-151.90,1815.01,2172,83.56,5.047
+194,67,72,Bonghwa Branch,Uljin Branch,765,-407.73,30.48,412.24,1808,22.80,3.623
+195,67,72,Bonghwa Branch,Uljin Branch,765,-2084.03,121.82,2102.32,4344,48.40,15.749
+196,68,188,Sangju Branch,Okcheon Branch,345,-96.93,-32.53,102.24,1356,7.54,0.263
+197,69,74,Yeongyang Branch,Cheongsong Branch,345,-171.91,-0.34,172.46,904,19.08,0.543
+198,69,117,Yeongyang Branch,Yeongdeok Branch,154,171.01,-1.88,171.02,1356,12.61,0.513
+199,70,71,Yeongju Branch,Yecheon Branch,345,-370.03,-38.42,372.02,2172,17.13,0.386
+200,70,114,Yeongju Branch,Northern Pohang Branch,345,2174.74,-207.18,2184.58,5430,40.23,23.442
+201,70,190,Yeongju Branch,Jecheon Branch,345,-213.07,-23.07,237.13,4344,5.46,0.145
+202,72,117,Uljin Branch,Yeongdeok Branch,765,304.62,-9.81,304.78,904,33.71,4.291
+203,73,120,Uiseong Branch,Chilgok Branch,345,-75.91,-15.10,77.40,1808,4.28,0.102
+204,75,84,Gangjin Branch,Mokpo Branch,154,93.19,-8.17,93.59,1808,5.18,0.121
+205,75,92,Gangjin Branch,Yeongam Branch,345,-162.08,-7.86,162.59,904,17.99,0.379
+206,75,95,Gangjin Branch,Jangheung Branch,154,6.35,-0.24,7.01,904,0.78,0.000
+207,75,98,Gangjin Branch,Haenam Branch,154,48.19,8.28,49.68,904,5.50,0.030
+208,76,88,Goheung Branch,Suncheon Branch,345,-130.08,-2.82,130.65,904,14.45,0.528
+209,76,90,Goheung Branch,Yeosu Branch,345,111.46,-8.05,111.75,904,12.36,0.372
+210,77,80,Gokseong Branch,Gwangju-Jeonnam Headquarters Directly Managed,154,-97.19,-5.08,98.05,1808,5.42,0.125
+211,77,81,Gokseong Branch,Gurye Branch,154,30.54,-0.78,30.73,904,3.40,0.012
+212,77,88,Gokseong Branch,Suncheon Branch,345,-45.96,-4.46,46.25,904,5.12,0.059
+213,77,177,Gokseong Branch,Sunchang Branch,154,42.42,1.64,42.76,904,4.73,0.022
+214,78,82,Gwangsan Branch,Naju Branch,154,-263.06,-17.57,264.72,904,29.28,0.815
+215,78,94,Gwangsan Branch,Jangseong Branch,154,-316.96,1.44,318.36,904,35.22,1.344
+216,79,88,Gwangyang Branch,Suncheon Branch,345,1741.15,-136.98,1746.53,2172,80.41,6.974
+217,79,88,Gwangyang Branch,Suncheon Branch,345,340.77,-32.39,342.31,904,37.87,1.604
+218,79,92,Gwangyang Branch,Yeongam Branch,345,976.12,-265.96,1011.70,6516,15.53,3.562
+219,80,83,Gwangju-Jeonnam Headquarters Directly Managed,Damyang Branch,154,76.86,14.86,78.89,904,8.73,0.069
+220,80,87,Gwangju-Jeonnam Headquarters Directly Managed,West Gwangju Branch,154,479.56,37.73,481.04,904,53.21,0.665
+221,80,91,Gwangju-Jeonnam Headquarters Directly Managed,Yeonggwang Branch,154,-1571.77,113.38,1584.47,4344,36.47,5.710
+222,80,94,Gwangju-Jeonnam Headquarters Directly Managed,Jangseong Branch,154,133.30,25.96,136.01,904,15.05,0.231
+223,80,99,Gwangju-Jeonnam Headquarters Directly Managed,Hwasun Branch,345,167.07,-36.22,170.95,3258,5.25,0.036
+224,80,173,Gwangju-Jeonnam Headquarters Directly Managed,Namwon Branch,345,31.37,-203.50,205.90,5430,3.79,0.039
+225,82,84,Naju Branch,Mokpo Branch,154,28.95,-16.88,33.51,1808,1.85,0.012
+226,82,87,Naju Branch,West Gwangju Branch,154,-135.20,-7.27,135.40,1356,9.99,0.195
+227,82,92,Naju Branch,Yeongam Branch,345,-185.37,-12.75,186.38,904,20.62,0.606
+228,82,99,Naju Branch,Hwasun Branch,345,-143.87,-11.47,144.51,904,15.99,0.372
+229,83,182,Damyang Branch,Jeongeup Branch,154,-25.12,7.43,29.31,904,3.24,0.017
+230,84,85,Mokpo Branch,Muan Branch,154,-33.83,-1.84,34.01,904,3.76,0.018
+231,84,89,Mokpo Branch,Sinan Branch,154,-50.98,-5.22,51.25,904,5.67,0.050
+232,84,96,Mokpo Branch,Jindo Branch,154,10.70,-3.20,12.37,904,1.37,0.003
+233,85,89,Muan Branch,Sinan Branch,154,-22.65,-10.28,24.87,1356,1.83,0.010
+234,85,92,Muan Branch,Yeongam Branch,345,-145.31,-7.50,145.83,904,16.13,0.452
+235,85,97,Muan Branch,Hampyeong Branch,154,62.90,6.49,63.44,904,7.02,0.026
+236,86,88,Boseong Branch,Suncheon Branch,345,-47.09,-6.76,47.57,904,5.26,0.071
+237,86,95,Boseong Branch,Jangheung Branch,154,35.26,0.49,35.56,904,3.93,0.016
+238,87,99,West Gwangju Branch,Hwasun Branch,345,-117.72,-15.30,118.71,904,13.13,0.135
+239,88,90,Suncheon Branch,Yeosu Branch,345,1732.12,34.11,1732.45,2172,79.76,10.879
+240,88,90,Suncheon Branch,Yeosu Branch,345,339.57,1.16,339.57,904,37.56,2.503
+241,88,99,Suncheon Branch,Hwasun Branch,345,7.21,-5.67,9.44,904,1.04,0.002
+242,88,173,Suncheon Branch,Namwon Branch,345,18.40,-113.20,114.69,3258,3.52,0.019
+243,91,94,Yeonggwang Branch,Jangseong Branch,154,301.65,0.49,301.65,904,33.37,1.770
+244,91,173,Yeonggwang Branch,Namwon Branch,345,1311.82,-369.09,1362.76,7602,17.93,4.943
+245,91,174,Yeonggwang Branch,Southern Jeonju Branch,154,671.77,-142.80,686.78,5430,12.65,1.750
+246,92,98,Yeongam Branch,Haenam Branch,345,228.35,15.90,228.90,1356,16.88,0.671
+247,92,99,Yeongam Branch,Hwasun Branch,345,124.78,-14.95,129.03,2172,5.94,0.072
+248,93,98,Wando Branch,Haenam Branch,154,-200.50,-22.32,202.77,904,22.43,0.931
+249,96,98,Jindo Branch,Haenam Branch,154,-41.31,-0.97,41.93,904,4.64,0.042
+250,100,101,Gangnam Branch,Gangdong-Songpa Branch,154,173.02,-344.38,385.40,2124,18.15,0.102
+251,100,106,Gangnam Branch,Seocho Branch,345,-1125.95,274.28,1160.67,2124,54.65,0.067
+252,101,156,Gangdong-Songpa Branch,Dongdaemun-Jungnang Branch,154,-45.88,-14.57,48.14,904,5.33,0.017
+253,102,105,Gangseo-Yangcheon Branch,Southern Seoul Headquarters Directly Managed,345,165.65,-117.42,203.05,904,22.46,0.063
+254,102,164,Gangseo-Yangcheon Branch,Bucheon Branch,154,180.26,-620.79,646.43,708,91.30,0.868
+255,103,104,Gwanak-Dongjak Branch,Guro-Geumcheon Branch,154,-2426.39,281.21,2457.30,1416,173.54,6.564
+256,103,106,Gwanak-Dongjak Branch,Seocho Branch,345,23.65,2.93,23.98,904,2.65,0.002
+257,103,106,Gwanak-Dongjak Branch,Seocho Branch,345,1779.61,-322.12,1808.53,1906,94.89,0.483
+258,104,105,Guro-Geumcheon Branch,Southern Seoul Headquarters Directly Managed,345,-339.34,-26.34,340.36,708,48.07,0.181
+259,105,157,Southern Seoul Headquarters Directly Managed,Mapo-Yongsan Branch,345,297.88,-206.42,362.41,708,51.19,0.198
+260,105,158,Southern Seoul Headquarters Directly Managed,Seodaemun-Eunpyeong Branch,345,187.37,-153.06,241.94,1062,22.78,0.097
+261,106,159,Seocho Branch,Seoul Headquarters Directly Managed,345,-48.07,-24.68,54.03,904,5.98,0.020
+262,107,111,Gyeongsan Branch,Southern Daegu Branch,345,12.39,86.07,142.55,4344,3.28,0.018
+263,107,112,Gyeongsan Branch,Daegu Headquarters Directly Managed,345,41.12,25.90,51.80,1356,3.82,0.019
+264,107,113,Gyeongsan Branch,Eastern Daegu Branch,345,245.98,-83.14,259.84,904,28.74,0.514
+265,107,118,Gyeongsan Branch,Yeongcheon Branch,345,1.98,-6.09,37.07,3258,1.14,0.000
+266,107,118,Gyeongsan Branch,Yeongcheon Branch,345,0.29,-0.81,4.84,904,0.54,0.000
+267,107,119,Gyeongsan Branch,Cheongdo Branch,345,-12.22,-2.17,12.55,904,1.39,0.002
+268,107,119,Gyeongsan Branch,Cheongdo Branch,345,-62.38,-12.06,63.83,2172,2.94,0.010
+269,107,148,Gyeongsan Branch,Seoul-San Branch,345,-756.34,-63.09,758.97,3258,23.30,2.079
+270,108,114,Gyeongju Branch,Northern Pohang Branch,345,-17.69,31.51,46.27,1356,3.41,0.025
+271,108,118,Gyeongju Branch,Yeongcheon Branch,345,271.02,-3.81,271.05,904,29.98,1.527
+272,108,121,Gyeongju Branch,Pohang Branch,345,121.67,8.88,122.04,904,13.50,0.221
+273,108,121,Gyeongju Branch,Pohang Branch,345,619.85,55.40,622.96,2172,28.68,0.962
+274,108,144,Gyeongju Branch,Eastern Ulsan Branch,345,472.48,-61.31,476.44,2172,21.94,0.951
+275,108,144,Gyeongju Branch,Eastern Ulsan Branch,345,92.46,-13.53,93.44,904,10.34,0.219
+276,108,151,Gyeongju Branch,Ulsan Branch,345,96.46,-13.95,97.46,904,10.78,0.243
+277,109,111,Goryeong Branch,Southern Daegu Branch,154,95.98,-0.05,95.98,904,10.62,0.151
+278,109,120,Goryeong Branch,Chilgok Branch,345,985.02,60.98,986.96,3258,30.29,2.454
+279,109,187,Goryeong Branch,Yeongdong Branch,154,-1136.06,25.59,1149.53,4344,26.46,5.254
+280,110,116,Gimcheon Branch,Seongju Branch,154,-165.49,-20.37,167.13,904,18.49,0.565
+281,111,115,Southern Daegu Branch,Western Daegu Branch,154,250.41,25.26,251.68,904,27.84,0.468
+282,111,120,Southern Daegu Branch,Chilgok Branch,345,860.45,86.67,869.30,4344,20.01,0.997
+283,111,120,Southern Daegu Branch,Chilgok Branch,345,84.48,7.12,85.14,904,9.42,0.115
+284,112,120,Daegu Headquarters Directly Managed,Chilgok Branch,345,71.57,5.35,72.14,904,7.98,0.076
+285,112,120,Daegu Headquarters Directly Managed,Chilgok Branch,345,364.53,33.24,368.30,2172,16.96,0.331
+286,112,121,Daegu Headquarters Directly Managed,Pohang Branch,345,-1238.49,-93.20,1249.17,6516,19.17,4.386
+287,114,117,Northern Pohang Branch,Yeongdeok Branch,154,-434.55,66.28,440.38,904,48.71,4.674
+288,114,121,Northern Pohang Branch,Pohang Branch,345,1275.66,-218.19,1294.18,2172,59.58,2.324
+289,114,121,Northern Pohang Branch,Pohang Branch,345,249.29,-46.82,253.65,904,28.06,0.535
+290,115,120,Western Daegu Branch,Chilgok Branch,345,-51.78,-6.95,52.25,1356,3.85,0.027
+291,116,120,Seongju Branch,Chilgok Branch,345,-361.70,-40.40,365.76,904,40.46,1.014
+292,121,144,Pohang Branch,Eastern Ulsan Branch,345,113.88,-132.03,174.36,3258,5.35,0.082
+293,121,144,Pohang Branch,Eastern Ulsan Branch,345,22.04,-26.25,34.28,1356,2.53,0.019
+294,122,129,Gongju Branch,Buyeo Branch,154,-215.87,14.68,217.16,904,24.02,0.910
+295,122,133,Gongju Branch,Sejong Branch,154,425.27,-59.46,429.74,904,47.54,2.141
+296,122,137,Gongju Branch,Cheongyang Branch,345,-433.72,21.50,438.00,904,48.45,4.187
+297,123,175,Geumsan Branch,Muju Branch,345,-59.78,-20.72,63.27,904,7.00,0.054
+298,123,188,Geumsan Branch,Okcheon Branch,345,-115.66,1.59,116.01,904,12.83,0.226
+299,124,126,Nonsan Branch,Daedeok-Yuseong Branch,154,389.32,11.16,389.48,904,43.08,3.174
+300,124,129,Nonsan Branch,Buyeo Branch,154,-448.39,13.66,451.18,904,49.91,2.733
+301,124,178,Nonsan Branch,Iksan Branch,345,-208.48,-53.35,216.54,904,23.95,0.923
+302,125,131,Dangjin Branch,Seosan Branch,765,-3813.22,536.75,3851.64,4344,88.67,18.549
+303,125,131,Dangjin Branch,Seosan Branch,765,-559.05,87.98,566.17,1356,41.75,3.200
+304,125,135,Dangjin Branch,Yesan Branch,765,1963.87,65.74,1964.97,2172,90.47,13.265
+305,125,139,Dangjin Branch,Hongseong Branch,765,330.48,0.50,330.48,904,36.56,2.489
+306,125,193,Dangjin Branch,Chungbuk Headquarters Directly Managed,765,6982.02,277.56,6987.54,14580,47.93,31.364
+307,126,130,Daedeok-Yuseong Branch,Western Daejeon Branch,154,-372.35,-54.13,377.08,904,41.71,0.408
+308,126,133,Daedeok-Yuseong Branch,Sejong Branch,154,-437.34,-76.64,449.65,904,49.74,2.343
+309,127,133,Daejeon-Sejong-Chungnam Headquarters Directly Managed,Sejong Branch,154,25.24,-1.75,25.74,1356,1.90,0.006
+310,127,133,Daejeon-Sejong-Chungnam Headquarters Directly Managed,Sejong Branch,154,85.77,-4.53,87.75,2172,4.04,0.017
+311,127,188,Daejeon-Sejong-Chungnam Headquarters Directly Managed,Okcheon Branch,345,-422.06,-31.05,424.83,1356,31.33,1.173
+312,128,129,Boryeong Branch,Buyeo Branch,345,879.16,21.76,879.43,1356,64.85,10.508
+313,128,134,Boryeong Branch,Asan Branch,345,2547.75,55.74,2548.36,5430,46.93,19.030
+314,128,137,Boryeong Branch,Cheongyang Branch,345,2364.97,-52.52,2365.55,2172,108.91,13.293
+315,128,137,Boryeong Branch,Cheongyang Branch,345,463.28,-17.83,463.62,904,51.29,3.058
+316,129,171,Buyeo Branch,Gunsan Branch,154,81.59,-70.95,108.13,1356,7.97,0.200
+317,130,188,Western Daejeon Branch,Okcheon Branch,345,-809.92,-100.70,829.08,1356,61.14,5.878
+318,131,138,Seosan Branch,Taean Branch,345,-4711.20,369.48,4734.61,4344,108.99,19.165
+319,131,138,Seosan Branch,Taean Branch,345,-1152.39,109.22,1159.89,2260,51.32,5.510
+320,132,171,Seocheon Branch,Gunsan Branch,345,247.56,-26.96,249.03,904,27.55,0.119
+321,132,178,Seocheon Branch,Iksan Branch,345,453.92,-16.15,456.54,4344,10.51,0.352
+322,133,136,Sejong Branch,Cheonan Branch,154,-109.75,54.73,125.61,904,13.90,0.462
+323,134,135,Asan Branch,Yesan Branch,345,-281.60,18.73,282.99,904,31.30,1.074
+324,134,135,Asan Branch,Yesan Branch,345,-1438.46,72.23,1443.84,2172,66.48,4.669
+325,134,136,Asan Branch,Cheonan Branch,345,1543.39,122.50,1548.25,1356,114.18,13.901
+326,134,137,Asan Branch,Cheongyang Branch,345,-541.89,-153.73,563.27,3258,17.29,1.063
+327,135,139,Yesan Branch,Hongseong Branch,154,-27.75,-8.01,28.89,904,3.20,0.011
+328,136,192,Cheonan Branch,Jincheon Branch,765,-286.20,-107.17,307.34,1356,22.67,1.267
+329,137,139,Cheongyang Branch,Hongseong Branch,345,-124.98,35.21,130.93,904,14.48,0.271
+330,137,178,Cheongyang Branch,Iksan Branch,345,1375.68,-169.41,1386.07,3258,42.54,8.724
+331,137,190,Cheongyang Branch,Jecheon Branch,345,512.39,-178.17,542.48,8688,6.24,0.562
+332,140,142,Gijang Branch,Southern Busan Branch,765,178.09,13.14,178.62,1356,13.17,0.164
+333,140,142,Gijang Branch,Southern Busan Branch,765,604.93,54.54,607.73,2172,27.98,0.476
+334,140,143,Gijang Branch,Dongnae Branch,765,309.77,16.88,310.23,904,34.32,0.781
+335,140,146,Gijang Branch,Northern Busan Branch,765,545.19,-76.90,550.59,4344,12.67,0.400
+336,140,148,Gijang Branch,Seoul-San Branch,765,383.94,-68.87,390.06,3258,11.97,0.443
+337,140,149,Gijang Branch,Yangsan Branch,765,1920.01,-95.04,1922.36,14580,13.18,0.617
+338,140,149,Gijang Branch,Yangsan Branch,765,75.90,-9.75,76.53,904,8.47,0.086
+339,140,151,Gijang Branch,Ulsan Branch,765,282.73,-47.04,286.62,2172,13.20,0.343
+340,141,147,Gimhae Branch,Western Busan Branch,154,41.11,2.32,41.34,904,4.57,0.011
+341,141,149,Gimhae Branch,Yangsan Branch,154,-154.77,-36.59,159.04,904,17.59,0.369
+342,143,145,Dongnae Branch,Busan-Ulsan Headquarters Directly Managed,154,55.38,0.96,55.41,904,6.13,0.014
+343,143,146,Dongnae Branch,Northern Busan Branch,345,-210.36,-26.69,212.47,904,23.50,0.357
+344,143,149,Dongnae Branch,Yangsan Branch,154,-105.86,-19.18,107.58,904,11.90,0.152
+345,144,151,Eastern Ulsan Branch,Ulsan Branch,154,58.66,-6.85,59.06,904,6.53,0.009
+346,144,151,Eastern Ulsan Branch,Ulsan Branch,154,299.84,-30.07,301.35,2172,13.87,0.039
+347,145,146,Busan-Ulsan Headquarters Directly Managed,Northern Busan Branch,345,-392.07,-42.55,395.73,904,43.78,0.764
+348,146,149,Northern Busan Branch,Yangsan Branch,345,26.66,-5.76,27.27,1356,2.01,0.007
+349,146,151,Northern Busan Branch,Ulsan Branch,345,193.03,-99.12,216.99,5430,4.00,0.093
+350,146,152,Northern Busan Branch,Central Busan Branch,345,761.04,70.17,764.27,2172,35.19,0.583
+351,148,149,Seoul-San Branch,Yangsan Branch,345,-12.90,-0.83,13.83,904,1.53,0.003
+352,148,151,Seoul-San Branch,Ulsan Branch,345,5.05,-2.96,5.85,904,0.65,0.000
+353,148,151,Seoul-San Branch,Ulsan Branch,345,25.81,-14.68,29.69,2172,1.37,0.002
+354,150,152,Yeongdo Branch,Central Busan Branch,154,-93.01,-9.30,93.47,2172,4.30,0.002
+355,153,155,Gangbuk-Seongbuk Branch,Nowon-Dobong Branch,154,-378.02,66.63,391.81,1416,27.67,0.083
+356,153,158,Gangbuk-Seongbuk Branch,Seodaemun-Eunpyeong Branch,154,-22.08,-21.33,30.70,904,3.40,0.006
+357,153,159,Gangbuk-Seongbuk Branch,Seoul Headquarters Directly Managed,154,-71.05,-92.55,116.67,1062,10.99,0.014
+358,154,156,Gwangjin-Seongdong Branch,Dongdaemun-Jungnang Branch,345,-59.98,8.04,70.31,708,9.93,0.007
+359,154,156,Gwangjin-Seongdong Branch,Dongdaemun-Jungnang Branch,345,-327.10,-43.33,336.15,1906,17.64,0.022
+360,154,159,Gwangjin-Seongdong Branch,Seoul Headquarters Directly Managed,345,-361.89,-39.74,364.07,708,51.42,0.175
+361,155,156,Nowon-Dobong Branch,Dongdaemun-Jungnang Branch,154,860.36,-168.41,876.69,2124,41.28,0.414
+362,157,158,Mapo-Yongsan Branch,Seodaemun-Eunpyeong Branch,345,-410.26,39.22,484.31,2859,16.94,0.032
+363,157,159,Mapo-Yongsan Branch,Seoul Headquarters Directly Managed,345,729.09,91.14,736.75,708,104.06,0.662
+364,158,159,Seodaemun-Eunpyeong Branch,Seoul Headquarters Directly Managed,154,535.92,12.80,537.06,708,75.86,0.530
+365,160,161,Ganghwa Branch,Gimpo Branch,345,1.14,-4.31,4.46,904,0.49,0.000
+366,161,165,Gimpo Branch,Western Incheon Branch,345,-897.07,2.07,898.26,2172,41.36,1.177
+367,161,165,Gimpo Branch,Western Incheon Branch,345,-175.75,3.26,176.06,904,19.48,0.271
+368,161,168,Gimpo Branch,Incheon Headquarters Directly Managed,345,131.82,5.80,132.08,1356,9.74,0.119
+369,162,166,Southern Incheon Branch,Siheung Branch,154,1380.83,-28.71,1381.13,1808,76.39,8.380
+370,162,167,Southern Incheon Branch,Yeongjong Branch,345,-3436.22,390.79,3461.29,3258,106.24,15.859
+371,164,168,Bucheon Branch,Incheon Headquarters Directly Managed,154,-155.34,87.51,178.50,904,19.75,0.122
+372,165,168,Western Incheon Branch,Incheon Headquarters Directly Managed,345,448.40,8.30,448.48,904,49.61,1.094
+373,165,169,Western Incheon Branch,Jemulpo Branch,345,1090.50,255.62,1120.72,3258,34.40,0.736
+374,165,169,Western Incheon Branch,Jemulpo Branch,345,143.01,31.07,146.41,904,16.20,0.113
+375,166,169,Siheung Branch,Jemulpo Branch,345,624.41,-179.57,649.72,3258,19.94,0.436
+376,168,169,Incheon Headquarters Directly Managed,Jemulpo Branch,345,-292.91,26.06,294.35,904,32.56,0.499
+377,170,182,Gochang Branch,Jeongeup Branch,154,-65.86,-13.38,67.21,904,7.43,0.068
+378,171,178,Gunsan Branch,Iksan Branch,345,22.48,0.49,23.56,904,2.61,0.010
+379,172,174,Gimje Branch,Southern Jeonju Branch,154,-35.81,-4.38,36.07,904,3.99,0.019
+380,172,174,Gimje Branch,Southern Jeonju Branch,154,-182.54,-25.28,184.29,2172,8.48,0.085
+381,172,176,Gimje Branch,Buan Branch,154,56.50,6.85,57.44,904,6.35,0.039
+382,173,179,Namwon Branch,Imsil Branch,345,-16.15,15.09,26.58,904,2.94,0.010
+383,173,188,Namwon Branch,Okcheon Branch,345,433.77,-74.78,524.94,6516,8.06,0.804
+384,174,178,Southern Jeonju Branch,Iksan Branch,345,-419.35,-5.85,421.00,3258,12.92,0.319
+385,174,179,Southern Jeonju Branch,Imsil Branch,154,57.57,-20.23,61.02,904,6.75,0.061
+386,174,181,Southern Jeonju Branch,Jeonbuk Headquarters Directly Managed,154,-136.67,28.07,139.78,904,15.46,0.096
+387,174,182,Southern Jeonju Branch,Jeongeup Branch,154,56.38,3.07,57.38,904,6.35,0.083
+388,175,187,Muju Branch,Yeongdong Branch,345,341.26,-20.27,341.86,2172,15.74,0.286
+389,176,182,Buan Branch,Jeongeup Branch,154,15.08,0.66,16.18,904,1.79,0.004
+390,178,181,Iksan Branch,Jeonbuk Headquarters Directly Managed,345,16.25,5.06,18.86,904,2.09,0.004
+391,178,181,Iksan Branch,Jeonbuk Headquarters Directly Managed,345,516.38,-183.23,547.92,1416,38.70,0.744
+392,178,182,Iksan Branch,Jeongeup Branch,345,105.52,-1.18,106.15,1356,7.83,0.248
+393,180,183,Jangsu Branch,Jinan Branch,154,-11.72,-4.32,12.49,904,1.38,0.002
+394,181,183,Jeonbuk Headquarters Directly Managed,Jinan Branch,154,43.50,-5.22,43.81,1356,3.23,0.023
+395,185,191,Eastern Cheongju Branch,Jeungpyeong-Goesan Branch,154,212.85,15.17,213.39,904,23.60,0.607
+396,185,192,Eastern Cheongju Branch,Jincheon Branch,765,-119.54,-31.36,123.59,904,13.67,0.259
+397,185,193,Eastern Cheongju Branch,Chungbuk Headquarters Directly Managed,345,-1347.64,-109.54,1360.09,1356,100.30,4.393
+398,186,187,Boeun Branch,Yeongdong Branch,154,-70.10,-8.00,70.55,904,7.80,0.127
+399,187,188,Yeongdong Branch,Okcheon Branch,345,-943.04,130.27,957.62,3258,29.39,1.738
+400,188,193,Okcheon Branch,Chungbuk Headquarters Directly Managed,345,-2082.64,245.83,2105.25,4344,48.46,9.674
+401,189,191,Eumseong Branch,Jeungpyeong-Goesan Branch,154,10.91,4.87,14.39,904,1.59,0.002
+402,189,192,Eumseong Branch,Jincheon Branch,765,-388.75,-45.60,394.28,1356,29.08,1.874
+403,189,194,Eumseong Branch,Chungju Branch,154,-131.03,-9.38,131.46,904,14.54,0.260
+404,190,194,Jecheon Branch,Chungju Branch,345,386.76,5.51,386.80,904,42.79,3.403
+405,192,193,Jincheon Branch,Chungbuk Headquarters Directly Managed,765,-470.13,48.85,479.87,3258,14.73,0.486
+406,192,193,Jincheon Branch,Chungbuk Headquarters Directly Managed,765,-1559.09,64.70,1573.94,14580,10.80,0.535
+407,163,164,Baengnyeong Branch,Bucheon Branch,154,-0.00,0.00,165.76,14580,1.14,0.001
