@@ -99,7 +99,8 @@ add_h = addA;
 
 for s = 1:2
     [res, cc, R] = solve_add(cg{s}, MA, addA);
-    bad = find(res.V < 0.95 | res.V > 1.05);
+    [vmn, vmx] = vlim(cc.kv);
+    bad = find(res.V < vmn | res.V > vmx);
     fprintf('[%s] STATCOM+증설 후 : 과부하 %d개, 최대 %.0f %%, 전압 %.3f~%.3f, 손실 %.0f MW, 전압위반 %d개\n', ...
         snap_kr{s}, R.nover, R.maxload, R.Vmin, R.Vmax, R.loss, numel(bad));
     summarize_kpg(cc, res, ['2032 현실 조건: ' snap_kr{s} ' 보강 후'], outdir, ['task1_7_' snaps{s} '_final']);

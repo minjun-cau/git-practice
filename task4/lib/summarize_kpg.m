@@ -12,7 +12,8 @@ function S = summarize_kpg(c, res, label, outdir, tag)
     S.gen_GW = sum(Pg_bus(c.type ~= 3 | Pg_bus > 1)) / 1000;
     S.loss_MW = sum(real(fl.loss)) * Sb;
     S.Vmin = min(res.V);  S.Vmax = max(res.V);
-    S.nlow = sum(res.V < 0.95);  S.nhigh = sum(res.V > 1.05);
+    [vmn, vmx] = vlim(c.kv);                     % 345 kV 이상 ±5 %, 154 kV ±10 %
+    S.nlow = sum(res.V < vmn);  S.nhigh = sum(res.V > vmx);
     S.maxload = max(lp);  S.n100 = sum(lp > 100);  S.n80 = sum(lp > 80);
     S.slack_MW = Pg_bus(c.type == 1);
     S.iter = res.iter;
@@ -21,7 +22,7 @@ function S = summarize_kpg(c, res, label, outdir, tag)
     fprintf('\n===== %s =====\n', label);
     fprintf('수요 %.1f GW (재생E %.1f GW 별도) | 송전손실 %.0f MW (%.2f %%) | Slack(사천) %.0f MW | NR %d회\n', ...
         S.load_GW, S.re_GW, S.loss_MW, S.loss_MW / (S.load_GW*1000) * 100, S.slack_MW, S.iter);
-    fprintf('전압 %.3f ~ %.3f pu | 0.95 미만 %d개, 1.05 초과 %d개\n', S.Vmin, S.Vmax, S.nlow, S.nhigh);
+    fprintf('전압 %.3f ~ %.3f pu | 허용범위(345 kV↑ ±5 %%, 154 kV ±10 %%) 미만 %d개, 초과 %d개\n', S.Vmin, S.Vmax, S.nlow, S.nhigh);
     fprintf('최대 부하율 %.0f %% | 100 %% 초과 %d개, 80 %% 초과 %d개 선로\n', S.maxload, S.n100, S.n80);
 
     fprintf('  지역          부하[GW]  발전[GW]  순유입[GW]  Vmin    Vmax\n');

@@ -17,7 +17,8 @@ function plot_kpg(c, res, lp, title_str, fname)
     scatter(c.lon, c.lat, sz, res.V, 'filled', 'markeredgecolor', [0.2 0.2 0.2]);
     colormap(ax1, jet(64));  caxis([0.93 1.07]);
     cb = colorbar; set(cb, 'position', [0.545 0.15 0.012 0.65]); ylabel(cb, '|V| [pu]');
-    hi = find(res.V > 1.05 | res.V < 0.95);
+    [vmn, vmx] = vlim(c.kv);
+    hi = find(res.V > vmx | res.V < vmn);          % 전압 등급별 허용범위 이탈 모선
     for k = hi'
         text(c.lon(k) + 0.04, c.lat(k), sprintf('%s %.3f', c.name_kr{k}, res.V(k)), 'fontsize', 7);
     end
@@ -33,9 +34,10 @@ function plot_kpg(c, res, lp, title_str, fname)
         plot([min(v) max(v)], [a a], '-', 'color', [0.3 0.5 0.8], 'linewidth', 5);
         plot(mean(v), a, 'k.', 'markersize', 10);
     end
-    plot([0.95 0.95], [0 na+1], 'r--', [1.05 1.05], [0 na+1], 'r--', 'linewidth', 1.2);
+    plot([0.95 0.95], [0 na+1], 'r--', [1.05 1.05], [0 na+1], 'r--', 'linewidth', 1.2);   % 345 kV 이상 ±5 %
+    plot([0.90 0.90], [0 na+1], 'm:', [1.10 1.10], [0 na+1], 'm:', 'linewidth', 1.2);     % 154 kV ±10 %
     set(gca, 'ytick', 1:na, 'yticklabel', c.area_name, 'ydir', 'reverse', 'fontsize', 8);
-    xlim([0.93 1.08]); ylim([0.5 na+0.5]); xlabel('|V| [pu]'); title('지역별 전압 범위 (점 = 평균)');
+    xlim([0.88 1.12]); ylim([0.5 na+0.5]); xlabel('|V| [pu]'); title({'지역별 전압 범위 (점 = 평균)', '빨강 ±5 % (345 kV↑), 보라 ±10 % (154 kV)'});
 
     % ---- 선로 부하율 상위 ----
     axes('position', [0.72 0.08 0.26 0.38]); hold on; box on;

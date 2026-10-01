@@ -50,12 +50,13 @@ fprintf('\n손실 : 데이터센터 %.0f MW → HVDC 병행 AC 손실 %.0f MW + 
 lt = js_case(c0, struct('dc', false, 'hvdc', false, 'scale', 0.6));
 [rl, ccl] = js_solve(lt);
 [vmax, ib] = max(rl.V);
-fprintf('\n경부하 : 최고 전압 %.3f pu (%d번 %s), 1.05 초과 %d개\n', vmax, ib, ccl.name_kr{ib}, sum(rl.V > 1.05));
+[vmn, vmx] = vlim(ccl.kv);
+fprintf('\n경부하 : 최고 전압 %.3f pu (%d번 %s, %d kV), 허용범위 초과 %d개\n', vmax, ib, ccl.name_kr{ib}, ccl.kv(ib), sum(rl.V > vmx));
 ls = js_case(c0, struct('dc', false, 'hvdc', false, 'scale', 0.6, 'statcom', [74 1.03]));
 [rs, ccs] = js_solve(ls);
 Qst = (rs.Q(74) + ccs.Qd(74) / 100) * 100;
-fprintf('74번 STATCOM 1.03 pu 제어 : 무효전력 %.0f Mvar (음수 = 흡수), 최고 전압 %.3f, 1.05 초과 %d개\n', ...
-    Qst, max(rs.V), sum(rs.V > 1.05));
+fprintf('74번 STATCOM 1.03 pu 제어 : 무효전력 %.0f Mvar (음수 = 흡수), 최고 전압 %.3f, 허용범위 초과 %d개\n', ...
+    Qst, max(rs.V), sum(rs.V > vmx));
 
 %% 5) 가정을 바꿔도 결론이 유지되는가
 fprintf('\n=== 민감도 ===\n');

@@ -44,28 +44,15 @@ for s = 1:2
 end
 
 %% 2단계 : 과부하 선로 증설 (두 시나리오 모두 100 % 이하가 될 때까지)
-dup = [];
-for it = 1:60
-    worst = [];
-    for s = 1:2
-        Ms = M;  Ms.hvdc = [hv_def(:,1:2) hv_def(:,2+s) 0.03*ones(3,1)];  Ms.dup = dup;
-        [~, ~, S] = solve_future(cg.(sc{s}), Ms);
-        nl0 = numel(c0.f);
-        lp = S.lp;
-        % 증설 회선은 원래 선로 번호로 환산해 같은 선로 묶음의 부하율로 판단
-        if max(lp) > 100
-            [~, k] = max(lp);
-            if k > nl0, k = dup(k - nl0); end
-            worst(end+1) = k; %#ok<AGROW>
-        end
-    end
-    if isempty(worst), break; end
-    dup = [dup; unique(worst(:))]; %#ok<AGROW>
-end
-M.dup = dup;
+%   데이터의 선로 한 행은 n회선 묶음 → 1회선 추가 = r,x ×n/(n+1), b·정격 ×(n+1)/n (lib/add_circuits.m)
+%   매 반복마다 각 시나리오에서 부하율이 가장 높은 선로에 1회선씩 추가 (lib/greedy_reinforce.m)
+Mh = cell(1, 2);
 for s = 1:2
-    Ms = M;  Ms.hvdc = [hv_def(:,1:2) hv_def(:,2+s) 0.03*ones(3,1)];
-    [~, ~, S] = solve_future(cg.(sc{s}), Ms);
+    Mh{s} = struct('hvdc', [hv_def(:,1:2) hv_def(:,2+s) 0.03*ones(3,1)], 'statcom', zeros(0,2));
+end
+add = greedy_reinforce({cg.peak, cg.light}, Mh, numel(c0.f));
+for s = 1:2
+    [~, ~, S] = solve_add(cg.(sc{s}), Mh{s}, add);
     steplog(end+1,:) = {'2 HVDC+선로증설', sc_kr{s}, S}; %#ok<SAGROW>
 end
 
@@ -74,9 +61,10 @@ stat = zeros(0, 2);
 for it = 1:10
     added = false;
     for s = 1:2
-        Ms = M;  Ms.hvdc = [hv_def(:,1:2) hv_def(:,2+s) 0.03*ones(3,1)];  Ms.statcom = stat;
-        [~, ~, S] = solve_future(cg.(sc{s}), Ms);
-        bad = find(S.V < 0.95 | S.V > 1.05);
+        Ms = Mh{s};  Ms.statcom = stat;
+        [~, ~, S] = solve_add(cg.(sc{s}), Ms, add);
+        [vmn, vmx] = vlim(c0.kv);
+        bad = find(S.V < vmn | S.V > vmx);
         bad = setdiff(bad, stat(:,1));
         if ~isempty(bad)
             stat = [stat; bad(:) ones(numel(bad),1)]; %#ok<AGROW>
@@ -85,28 +73,25 @@ for it = 1:10
     end
     if ~added, break; end
 end
-M.statcom = stat;
+for s = 1:2, Mh{s}.statcom = stat; end
+M.add = add;  M.statcom = stat;
 
 %% 최종 결과
 fprintf('=== Task 1-6 : 미래 계통 보강 대책 ===\n');
 for k = 1:size(hv_def, 1)
     fprintf('HVDC %-22s : 최대부하 %.1f GW / 경부하 %.1f GW\n', hv_name{k}, hv_def(k,3)/1000, hv_def(k,4)/1000);
 end
-fprintf('선로 증설 %d회선 :\n', numel(dup));
-for k = dup(:)'
-    fprintf('   %-8s - %-8s (%3d kV, 정격 %4.0f MVA)\n', c0.name_kr{c0.f(k)}, c0.name_kr{c0.t(k)}, ...
-        c0.br_kv(k), c0.rate(k)*c0.baseMVA);
-end
+fprintf('선로 증설 %d회선 (선로 %d곳) :\n', sum(add), nnz(add));
+list_add(c0, add);
 if isempty(stat)
-    fprintf('STATCOM : 필요 없음 (HVDC 변환소(VSC)의 전압제어로 모든 모선 0.95~1.05 pu 유지)\n');
+    fprintf('STATCOM : 필요 없음 (HVDC 변환소(VSC)의 전압제어로 모든 모선 허용범위 유지)\n');
 else
     fprintf('STATCOM %d개소 : %s\n', size(stat,1), strjoin(c0.name_kr(stat(:,1))', ', '));
 end
 
 final = struct();
 for s = 1:2
-    Ms = M;  Ms.hvdc = [hv_def(:,1:2) hv_def(:,2+s) 0.03*ones(3,1)];
-    [res, cc, S] = solve_future(cg.(sc{s}), Ms);
+    [res, cc, S] = solve_add(cg.(sc{s}), Mh{s}, add);
     if ~isempty(stat)   % STATCOM 이 필요했던 경우에만 별도 단계로 기록
         steplog(end+1,:) = {'3 HVDC+증설+STATCOM', sc_kr{s}, S}; %#ok<SAGROW>
     end

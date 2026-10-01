@@ -39,47 +39,59 @@ Fl = future_def('light');
 ish = find(Fl.re(:,1) == 89);
 Pgrid = 0:100:5000;
 Vsh = nan(size(Pgrid));  Vmin_sys = nan(size(Pgrid));  maxld = nan(size(Pgrid));
-Vw = [];  thw = [];
+Vsh_q = nan(size(Pgrid));  ok_q = false(size(Pgrid));
+[vmn, vmx] = vlim(c0.kv);        % 345 kV 이상 ±5 %, 154 kV ±10 % (신안 154 kV → 하한 0.90 pu)
+Vw = [];  thw = [];  nose = false;
 for k = 1:numel(Pgrid)
     Fk = Fl;  Fk.re(ish, 2) = Pgrid(k);
     ck = build_kpg_case(dispatch_kpg(future_kpg(c0, Fk), 1.0));
-    Yk = make_ybus(ck.nb, ck.f, ck.t, ck.r, ck.x, ck.b);
-    if isempty(Vw), Vw = ck.V0;  thw = ck.th0; end
-    V0 = Vw;  V0(ck.type ~= 3) = ck.V0(ck.type ~= 3);
-    rk = nr_pf(Yk, ck.type, ck.Psp, ck.Qsp, V0, thw, struct('maxit', 30));
-    if ~rk.converged || min(rk.V) < 0.5, break; end
-    Vw = rk.V;  thw = rk.th;
-    Vsh(k) = rk.V(89);  Vmin_sys(k) = min(rk.V);
-    flk = branch_flows(rk.V, rk.th, ck.f, ck.t, ck.r, ck.x, ck.b);
-    maxld(k) = max(flk.Smax ./ ck.rate * 100);
+    % (1) 무효전력 한계 없이, 직전 해에서 출발 → 전압붕괴점(nose)까지 추적
+    if ~nose
+        Yk = make_ybus(ck.nb, ck.f, ck.t, ck.r, ck.x, ck.b);
+        if isempty(Vw), Vw = ck.V0;  thw = ck.th0; end
+        V0 = Vw;  V0(ck.type ~= 3) = ck.V0(ck.type ~= 3);
+        rk = nr_pf(Yk, ck.type, ck.Psp, ck.Qsp, V0, thw, struct('maxit', 30));
+        if ~rk.converged || min(rk.V) < 0.5
+            nose = true;
+        else
+            Vw = rk.V;  thw = rk.th;
+            Vsh(k) = rk.V(89);  Vmin_sys(k) = min(rk.V);
+            flk = branch_flows(rk.V, rk.th, ck.f, ck.t, ck.r, ck.x, ck.b);
+            maxld(k) = max(flk.Smax ./ ck.rate * 100);
+        end
+    end
+    % (2) 발전기 무효전력 한계 적용 (실제 운전 조건) → 허용범위 만족 여부
+    [rq, ~] = pf_qlim(ck, true);
+    if rq.converged && min(rq.V) > 0.5
+        Vsh_q(k) = rq.V(89);
+        ok_q(k) = all(rq.V >= vmn & rq.V <= vmx);
+    end
 end
 klim = find(~isnan(Vsh), 1, 'last');
 Plim = Pgrid(klim);
 fprintf('신안 154 kV 모선 재생E 수용 한계 ≈ %.1f GW (그 이상은 해 없음), 이때 신안 전압 %.3f pu\n', ...
     Plim/1000, Vsh(klim));
-k95 = find(Vsh < 0.95, 1);
-if ~isempty(k95)
-    fprintf('신안 전압이 0.95 pu 아래로 떨어지는 출력 ≈ %.1f GW\n', Pgrid(k95)/1000);
-end
 
 fig = figure('visible', 'off', 'position', [0 0 760 440]);
 plot(Pgrid/1000, Vsh, 'o-', 'linewidth', 2); hold on; grid on;
-plot(Pgrid/1000, Vmin_sys, 's-', 'linewidth', 1.2);
-plot([0 5], [0.95 0.95], 'r--');
+plot(Pgrid/1000, Vsh_q, 'd-', 'linewidth', 1.5);
+plot([0 5], [0.90 0.90], 'r--');
 if klim < numel(Pgrid)
     plot([Plim Plim]/1000, [0.5 1.1], 'k:', 'linewidth', 1.5);
     text(Plim/1000 + 0.05, 0.62, {'조류계산 해 없음', '(전압붕괴)'}, 'fontsize', 9);
 end
-xlabel('신안 해상풍력 출력 [GW]'); ylabel('|V| [pu]'); ylim([0.55 1.1]); xlim([0 5]);
-legend('신안 모선 전압', '계통 최저 전압', '허용 하한 0.95 pu', 'location', 'southwest');
+xlabel('신안 해상풍력 출력 [GW]'); ylabel('신안 모선 |V| [pu]'); ylim([0.55 1.1]); xlim([0 5]);
+legend('무효전력 한계 미적용', '발전기 무효전력 한계 적용', '154 kV 허용 하한 0.90 pu', 'location', 'southwest');
 title('미래 경부하 : 신안(154 kV) 재생E 수용 한계 (P-V 곡선)');
 print(fig, '-dpng', '-r110', fullfile(outdir, 'task1_5_pv_curve.png')); close(fig);
 
-%% (D) 미래 경부하 - 전압 기준(0.95 pu)을 지키는 최대 출력으로 제한 운전
-%   전압붕괴 직전(Plim)은 운전할 수 없으므로 신안 전압 >= 0.95 pu 인 최대 출력 사용
-kop = find(Vsh >= 0.95, 1, 'last');
-Pop = Pgrid(kop);
-fprintf('→ 운전 가능 출력 %.1f GW 로 제한 (출력제한량 %.1f GW)\n', Pop/1000, (5000 - Pop)/1000);
+%% (D) 미래 경부하 - 허용전압을 지키는 최대 출력으로 제한 운전
+%   무효전력 한계를 적용한 상태에서 모든 모선이 허용범위(345 kV↑ ±5 %, 154 kV ±10 %) 안인 최대 출력
+kop = find(~ok_q, 1) - 1;
+if isempty(kop), kop = numel(Pgrid); end
+Pop = Pgrid(max(kop, 1));
+fprintf('→ 운전 가능 출력 %.1f GW 로 제한 (출력제한량 %.1f GW, 무효전력 한계 적용 시 신안 %.3f pu)\n', ...
+    Pop/1000, (5000 - Pop)/1000, Vsh_q(max(kop, 1)));
 Fl.re(ish, 2) = Pop;
 c = dispatch_kpg(future_kpg(c0, Fl), 1.0);
 cc = build_kpg_case(c);
@@ -87,7 +99,7 @@ cc = build_kpg_case(c);
 Slight = summarize_kpg(cc, res, sprintf('Task 1-5: 미래 경부하 (신안 %.1f GW로 출력제한)', Pop/1000), ...
                        outdir, 'task1_5_future_light');
 fut.light.c = cc;  fut.light.res = res;  fut.light.S = Slight;  fut.light.Plim = Plim;  fut.light.Pop = Pop;
-fut.pv = struct('P', Pgrid, 'Vsh', Vsh, 'Vmin', Vmin_sys, 'maxload', maxld);
+fut.pv = struct('P', Pgrid, 'Vsh', Vsh, 'Vsh_q', Vsh_q, 'ok_q', ok_q, 'Vmin', Vmin_sys, 'maxload', maxld);
 save(fullfile(outdir, 'task1_5_result.mat'), 'fut');
 
 %% (E) 현재 vs 미래 비교

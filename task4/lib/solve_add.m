@@ -13,4 +13,5 @@ function [res, cc, R] = solve_add(cg, M, add)
         R.lp = inf(numel(cc.f), 1);  R.loss = inf;  R.Vmin = nan;  R.Vmax = nan;
     end
     R.nover = sum(R.lp > 100);  R.maxload = max(R.lp);
+    R.V = res.V;
 end
