@@ -346,7 +346,7 @@ HVDC 변환소는 실제처럼 345/765 kV 변전소에 연결했습니다. 모�
 - 제11차 전력수급기본계획: [에너지데일리](https://www.energydaily.co.kr/news/articleView.html?idxno=153572), [에너지경제연구원 KESIS](https://kesis.keei.re.kr/board.es?mid=a10306000000&bid=0060&list_no=2125&act=view), [에너지경제신문(재생E 보급량)](https://m.ekn.kr/view.php?key=20250312026085319), [김·장 법률사무소](https://www.kimchang.com/ko/insights/preview.kc?sch_section=4&idx=31719), [법무법인 세종(석탄 전환)](https://shinkim.com/kor/media/newsletter/2761)
 - 용인 반도체 산단 전력공급: [아주경제 (2026.8)](https://www.ajunews.com/view/20260812090250069)
 - HVDC: [이투뉴스 – 서해안 HVDC 11차 계획](http://www.e2news.com/news/articleView.html?idxno=320187), [경인일보 – 동해안 HVDC 2027.6 준공 연장](https://www.kyeongin.com/article/1741006)
-- 데이터센터 수도권 집중: [한국냉동공조산업협회 – 한전 발표](https://www.kharn.kr/mobile/article.html?no=21029)
+- 데이터센터 수도권 집중: [파이낸셜뉴스 – 운영 75 %·계획 68 % 수도권](https://www.fnnews.com/news/202601051811393187), [한전 발표 – 전력공급 신청의 약 90 % 수도권](https://www.kharn.kr/mobile/article.html?no=21029)
 - 봄철 최저수요: [뉴스서울 – 산업부 봄철 수급대책](https://newsseoul.co.kr/news/view/1065583217460142)
 - 태양광 지역 비중: [전라지역 태양광 공간 분석 (KoreaScience)](https://koreascience.kr/article/JAKO202526657643770.pdf)
 - 2024 태양광 설비: [아이뉴스24](https://www.inews24.com/view/1831962)
